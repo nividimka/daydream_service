@@ -16,6 +16,23 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <service
+                android:name=".MyDream"
+                android:exported="true"
+                android:icon="@drawable/ic_adb_black_24dp"
+                android:label="Daydream"
+                android:permission="android.permission.BIND_DREAM_SERVICE">
+
+            <intent-filter>
+                <action android:name="android.service.dreams.DreamService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- Point to additional information for this dream (optional) -->
+            <meta-data
+                    android:name="android.service.dream"
+                    android:resource="@xml/my_dream" />
+        </service>
     </application>
 
 </manifest>
